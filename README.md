@@ -15,14 +15,15 @@ python -m venv .colibri_venv
 ```
 3. Activate virtual environment
 
-```.colibri_venv\Scripts\activate.bat           (Windows)
+```
+.colibri_venv\Scripts\activate.bat           (Windows)
 ./.colibri_venv/bin/activate                 (Linux, Mac)
 ```
 
 4. Install requirements.txt
 Install the Python libraries inside virtual environment :
 ```
-(.colibri_venv) D:\workspace\colibri_django_rest_framework> pip install -r requirements.txt```
+(.colibri_venv) D:\workspace\colibri_django_rest_framework> pip install -r requirements.txt
 ```
 
 5. Start Django server
