@@ -7,9 +7,10 @@
 ```
    git clone https://github.com/btrif/colibri_django_rest_framework.git
 ```
-2. Setup virtual env
-   Create new environment
-   Go to project folder and create the virtual env :
+2. Setup virtual environment
+
+   To create new environment, 
+go to project folder and create the virtual env :
 
 ```
 python -m venv .colibri_venv
@@ -22,6 +23,7 @@ python -m venv .colibri_venv
 ```
 
 4. Install requirements.txt
+
 Install the Python libraries inside virtual environment :
 ```
 (.colibri_venv) D:\workspace\colibri_django_rest_framework> pip install -r requirements.txt
