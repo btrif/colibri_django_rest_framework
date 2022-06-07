@@ -25,7 +25,7 @@ def apiOverview(request):
         'Api Overview': server_url + '/',
         'CRUD operations on Employee': server_url + '/employee',
         'Average Age per Industry': server_url + '/average-age-industry/',
-        'Average Salary Industry': server_url + '/average-salary-industry/',
+        'Average Salary per Industry': server_url + '/average-salary-industry/',
         'Average Salary per Years of Experience': server_url + '/average-salary-experience/',
     }
 
@@ -46,6 +46,7 @@ def averageAgeIndustry(request):
 
 @api_view(['GET'])
 def averageSalaryIndustry(request):
+    '''View for Average Slary per Industry'''
     queryset = Employee.objects.all().order_by('id')
     df = read_frame(queryset, fieldnames=['salary', 'industry'])
     industry_mean_salary = df.groupby('industry')['salary'].mean().round(2)
@@ -55,7 +56,7 @@ def averageSalaryIndustry(request):
 
 @api_view(['GET'])
 def averageSalaryExperience(request):
-    ''' View for Average age per Industry'''
+    ''' View for Average Salary per years of Experience'''
     queryset = Employee.objects.all()
     df = read_frame(queryset, fieldnames=['years_of_experience', 'salary'])
     df.dropna(subset='salary', inplace=True)
