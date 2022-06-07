@@ -9,13 +9,3 @@ class EmployeeSerializer(serializers.ModelSerializer):
         # fields = ('id', 'first_name', 'last_name', 'email', 'gender', 'date_of_birth', 'industry', 'salary', 'years_of_experience')
         fields = '__all__'
 
-
-
-class EmployeeIndustrySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Employee
-        fields = ( 'industry' ,  )
-
-
-
-

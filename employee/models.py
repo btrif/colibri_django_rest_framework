@@ -19,4 +19,3 @@ class Employee(models.Model):
         return f'Name : {self.first_name} {self.last_name}, E-mail:  {self.email}, ' \
                f'gender : {self.gender}, DOB : {self.date_of_birth}, Industry : {self.industry}, ' \
                f'Salary :{self.salary}, Years active : {self.years_of_experience}'
-

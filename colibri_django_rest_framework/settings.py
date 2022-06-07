@@ -9,11 +9,12 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -21,6 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-r^d8ccy4)730_xawzfv2*)i%fhqwx^69rn9e8vzr6rcm5(bo-f'
+# with open(os.path.join(BASE_DIR, "secret_key.txt") ) as sf :
+#     SECRET_KEY = sf.read().strip()
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -133,3 +137,5 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
+
+LOCALHOST = 'http://127.0.0.1:8000'

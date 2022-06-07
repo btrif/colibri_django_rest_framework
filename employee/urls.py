@@ -3,22 +3,19 @@
 from django.urls import path, include
 from rest_framework import routers
 from . import views
-import django
 
 router = routers.DefaultRouter()
 
-router.register('employee', views.EmployeeView)
-router.register('industry', views.EmployeeIndustryView, basename='industry')
+router.register('employee', views.EmployeeViewSet, basename='employee')
 
 urlpatterns = [
     # path('', include(router.urls)),
-    # path('', views.apiOverview, name="api-overview"),
-    # path('employee-list/', views.employeeList, name="employee-list"),
-    # path('employee-detail/', views.employeeDetail, name="employee-detail"),
+    path("", views.apiOverview, name="api-overview"),
+    path('average-age-industry/', views.averageAgeIndustry, name="average-age-industry"),
+    path('average-salary-industry/', views.averageSalaryIndustry, name="average-salary-industry"),
+    path('average-salary-experience/', views.averageSalaryExperience, name="average-salary-experience"),
 
 ]
 
 # no Pain, no Gain - ModelViewSets
 urlpatterns += router.urls
-
-
